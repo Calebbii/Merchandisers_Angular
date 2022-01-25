@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-9" id="merchandiser">
+            <ul>
+                <li *ngFor='let merchandisers of merchandisers'>
+                    <div class="row">
+                        <img src="https://cdn2.vectorstock.com/i/1000x1000/20/76/man-avatar-profile-vector-21372076.jpg" height="150px" width="150px" alt="profile image">
+                        <div class="col-6">
+                            <div class="name">
+                                <h3>{{merchandisers.firstname}} {{merchandisers.lastname}}</h3>
+                            </div>
+                            <div class="certificate">
+                                <h3>{{merchandisers.email}}</h3>
+                            </div>
+                            <div class="certificate">
+                                <h3>{{merchandisers.contact}}</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div>
+                                <button type="button" id="view" class="btn btn-info" style="background-color: #23BCDD;">View</button>
+                                <button type="button" id="delete" class="btn btn-danger" style="background-color: #C61616;">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div id="create">
+                <button type="button" id="create" class="btn btn-success" style="background-color: aqua;">Create Merchandiser</button>
+            </div>
+        </div>
+    </div>
+</div>
