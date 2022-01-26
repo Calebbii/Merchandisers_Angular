@@ -1,0 +1,25 @@
+.row {
+    display: flex;
+}
+#routes {
+    margin-left: 8cm;
+}
+.right h2 {
+    text-align: center;
+}
+img {
+    height: 250px;
+    width: 250px;
+    border-radius: 100%;
+    margin-left: 4cm;
+}
+.details {
+    margin-left: 5cm;
+}
+h2 {
+    font-size: 60px;
+}
+.navbar {
+    height: 2.5cm;
+    background-color: black;
+}

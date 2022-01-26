@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-6">
+          <div class="card">
+              <div class="text-center">
+                  <h1>Register</h1>
+                  <h6>Register Yourself here!!</h6>
+
+              </div>
+
+              
+                  <form>
+                      <form [formGroup]="registerForm" (ngSubmit)="register()">
+                      <div class="form-group">
+                          <label for="exampleInputPassword1">Full Names</label>
+                          <input  formContolName="fullname" type="text" class="form-control" id="exampleInputPassword1" placeholder="Full name">
+                          <span class="text-danger" *ngIf="registerForm.controls['fullname'].dirty && registerForm.hasError('required','fullname')">*Fullname is required*</span>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Mobile Number</label>
+                          <input formContolName="mobile" type="number" class="form-control" id="exampleInputPassword1" placeholder="Mobile Number">
+                          <span class="text-danger" *ngIf="registerForm.controls['mobile'].dirty && registerForm.hasError('required','mobile')">*Fullname is required*</span>
+                        </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input formContolName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email address">
+                        <span class="text-danger" *ngIf="registerForm.controls['email'].dirty && registerForm.hasError('required','email')">*Fullname is required*</span>
+                        
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input formContolName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <span class="text-danger" *ngIf="registerForm.controls['password'].dirty && registerForm.hasError('required','password')">*Fullname is required*</span>
+                      </div>
+                      
+                      <button type="submit"   class="btn btn-primary mt-2">Register</button>
+                    </form>
+                  </form>
+                    <a style="color: #fff;margin-top: 10px;" routerLink = "/login" >Already registered?Click to Login!!</a>
+
+          </div>
+
+      </div>
+
+  </div>
+
+</div>
