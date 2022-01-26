@@ -14,3 +14,7 @@ button {
 img {
     float: left;
 }
+.navbar {
+    height: 3cm;
+    background-color: #00BFFF;
+}
