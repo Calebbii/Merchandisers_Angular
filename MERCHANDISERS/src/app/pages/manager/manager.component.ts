@@ -1,12 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Merchandisers } from 'src/app/models/merchandisers';
 
+
+import { FormGroup, FormBuilder } from '@angular/forms';
+
+
 @Component({
   selector: 'app-manager',
   templateUrl: './manager.component.html',
   styleUrls: ['./manager.component.css']
 })
 export class ManagerComponent implements OnInit {
+
+  
   merchandisers:Merchandisers[] = [
     {id:1,firstname:'Caleb',lastname:'Bii',email:'cal@gmail.com',profile_image:'',contact:+25475674546},
     {id:2,firstname:'Simon',lastname:'Murithi',email:'sim@gmail.com',profile_image:'',contact:+25478675474},
@@ -18,7 +24,6 @@ export class ManagerComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }
