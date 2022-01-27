@@ -20,22 +20,22 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  login(){
-    this.http.get<any>("http://localhost:4200/registerUsers")
-    .subscribe(res=>{
-      const user = res.find((a:any)=>{
-        return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
-      });
-      if(user){
-        alert("Login Success!!")
-        this.loginForm.reset();
-        this.router.navigate(['dashboard'])
-      }else{
-        alert("User not found!!")
-      }
-    },err=>{
-      alert("something went wrong!!")
+  // login(){
+  //   this.http.get<any>("http://localhost:4200/register")
+  //   .subscribe(res=>{
+  //     const user = res.find((a:any)=>{
+  //       return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
+  //     });
+  //     if(user){
+  //       alert("Login Success!!")
+  //       this.loginForm.reset();
+  //       this.router.navigate(['dashboard'])
+  //     }else{
+  //       alert("User not found!!")
+  //     }
+  //   },err=>{
+  //     alert("something went wrong!!")
     
-    })
-  }
+  //   })
+  // }
 }
