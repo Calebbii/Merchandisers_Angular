@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NavComponent } from './pages/nav/nav/nav.component';
 import { ManagerComponent } from './pages/manager/manager.component';
 import { UserComponent } from './pages/user/user.component';
@@ -15,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-   
+    DashboardComponent,
     LoginComponent,
     RegisterComponent,
     NavComponent,
