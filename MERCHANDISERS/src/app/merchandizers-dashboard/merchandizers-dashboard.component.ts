@@ -1,0 +1,46 @@
+import { Component, OnInit } from '@angular/core';
+import { Merchandisers } from '../models/merchandisers';
+
+@Component({
+  selector: 'app-merchandizers-dashboard',
+  templateUrl: './merchandizers-dashboard.component.html',
+  styleUrls: ['./merchandizers-dashboard.component.css']
+})
+export class MerchandizersDashboardComponent implements OnInit {
+
+  merchandisers:Merchandisers[] = [
+    {id:1,firstname:'Caleb',lastname:'Bii',email:'cal@gmail.com',profile_image:'',contact:+25475674546},
+    {id:2,firstname:'Simon',lastname:'Murithi',email:'sim@gmail.com',profile_image:'',contact:+25478675474},
+    {id:3,firstname:'Ian',lastname:'Wanarua',email:'ian@gmail.com',profile_image:'',contact:+25475674546},
+    {id:4,firstname:'Willard',lastname:'Sigei',email:'will@gmail.com',profile_image:'',contact:+25475674546},
+    {id:5,firstname:'Muhamed',lastname:'Abdi',email:'muham@gmail.com',profile_image:'',contact:+25475674546},
+    {id:6,firstname:'Mercy',lastname:'Meni',email:'mercy@gmail.com',profile_image:'',contact:+25475674546},
+  ];
+
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  displatyle = "none";
+ 
+  openPopu() {
+    this.displatyle = "block";
+  }
+  
+  closePopu() {
+    this.displatyle = "none";
+  }
+
+  dispstyle = "none";
+ 
+  openPop() {
+    this.dispstyle = "block";
+  }
+  
+  closePop() {
+    this.dispstyle = "none";
+  }
+
+}
