@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login/login.component';
+import { MerchandizersDashboardComponent } from './merchandizers-dashboard/merchandizers-dashboard.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ManagerComponent } from './pages/manager/manager.component';
 import { UserComponent } from './pages/user/user.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'managerprofile', component: ManagerComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
+  { path: 'mdashboard', component: MerchandizersDashboardComponent},
 ];
 
 @NgModule({
