@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login/login.component';
 import { RegisterComponent } from './register/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LandingComponent } from './landing/landing.component';
+import { MerchandizersDashboardComponent } from './merchandizers-dashboard/merchandizers-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LandingComponent } from './landing/landing.component';
     NavComponent,
     ManagerComponent,
     UserComponent,
-    LandingComponent
+    LandingComponent,
+    MerchandizersDashboardComponent
   ],
   imports: [
     BrowserModule,
