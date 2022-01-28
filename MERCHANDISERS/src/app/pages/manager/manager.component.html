@@ -9,27 +9,134 @@
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a class="navbar-brand" href="#">Dashboard</a>
+                    <a class="navbar-brand" style="color: white;" href="#">Dashboard</a>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" style="color: white;" href="#">Home</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#aboutUs">About Us</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#quotes">Quotes</a>
+                        <a class="nav-link" style="color: white;" href="#aboutUs">About Us</a>
                       </li>
                     </ul>
-                    <form class="d-flex">
-                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                      <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
                   </div>
                 </div>
               </nav>
         </header>
-        <div style="margin-left: 5cm;" class="container">
+        <div class="container mt-5 d-flex flex-row">
+          <div class="left-side green" style="width: 55cm;">
+              <nav class="pt-7" style="margin-right: 5cm;">
+                  <ul type="none">
+                      <li class="">
+                        <div class="col-md-12 text-center">
+                          <button class="green">
+                          <a
+                          routerLink="/users/:id"
+                          routerLinkActive="active"
+                          id="2"
+                          type="button"
+                          class="btn onet">
+                          <img class="yyy" style="height: 70px; width: 100px;" src="https://cdn2.vectorstock.com/i/1000x1000/20/76/man-avatar-profile-vector-21372076.jpg">
+                          <strong style="color: rgb(236, 163, 27); font-size: 40px;" >PROFILE</strong>
+                          </a>
+                        </button>
+                        </div>
+                      </li>
+                      <li class="">
+                      <div class="col-md-12 text-center">
+                        <button class="green">
+                        <a
+                        id="2"
+                        type="button green"
+                        class="btn onet"
+                        (click)="openPopu()">
+                        <img class="yyy" style="height: 90px; width: 130px;" src="https://f9prodcdn.azureedge.net/media/1905/iconh1_routemap-copy.png">
+                        <strong style="color: rgb(236, 163, 27); font-size: 40px;" >ROUTES</strong>
+                      </a>
+                      </button>
+                      </div>
+                      </li>
+                      <div class="twe">
+                        <li class="">
+                          <div class="col-md-12 text-center">
+                            <button class="green">
+                            <a
+                            routerLink="/user/:id/dashboard"
+                            routerLinkActive="active"
+                            id="2"
+                            type="button"
+                            class="btn onet twe">
+                            <img class="yyy" style="height: 70px; width: 130px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT55d6d7YbbBerPK0Cezy0FoFcFDJtQXrhsZw&usqp=CAU">
+                            <strong style="color: rgb(236, 163, 27); font-size: 40px;" >CALENDAR</strong>
+                            </a>
+                          </button>
+                          </div>
+                        </li>
+                        <li class="">
+                            <div class="col-md-12 text-center">
+                              <button class="green">
+                              <a
+                              id="2"
+                              type="button"
+                              class="btn onet"
+                              (click)="openPop()">
+                              <img class="yyy" src="https://i.pinimg.com/736x/be/7a/43/be7a43ae4e8d64cd4fcc5a2522986134.jpg">
+                              <strong style="color: rgb(236, 163, 27); font-size: 40px;" >NOTIFICATIONS</strong>
+                              </a>
+                            </button>
+                            </div>
+                        </li>
+                      </div>
+                  </ul>
+              </nav>
+          </div>
+          <div class="right-side">
+              <div class="green d-flex flex-row">
+                  <div class="input-group pt-2 pb-2 cen">
+                      <div class="form-outline">
+                          <button style="background-color: aqua; border: 30%; margin-left: 2cm;">Create Merchandiser</button>
+                      </div>
+                      <div class="form-outline">
+                          <input type="search" id="form1" class="form-control" placeholder="Search"/>
+                      </div>
+                        <button type="button" class="btn btn-primary">
+                          <i class="fas fa-search"></i>
+                        </button>
+                  </div>
+                  <div>
+                      <img class="img" src="https://res.cloudinary.com/dante6996-arch/image/upload/v1638895973/odk9aruvpwstqf1tnwyx.png" alt="profile-pic" style="width: 100px; height: 100px;">
+                  </div>
+              </div>
+                   
+                  <div class="down-side">
+                    <h4 class="text-center">MERCHANDISERS</h4>
+                      <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th class="text-purple" scope="col">FIRSTNAME</th>
+                              <th class="text-purple" scope="col">LASTNAME</th>
+                              <th class="text-purple" scope="col">EMAIL</th>
+                              <th class="text-purple" scope="col">CONTACT</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr  *ngFor='let merchandiser of merchandisers;let i = index'>
+                              <th scope="row"></th>
+                              <td>{{ merchandiser.firstname }}</td>
+                              <td>{{ merchandiser.lastname }}</td>
+                              <td>{{ merchandiser.email }}</td>
+                              <td>{{ merchandiser.contact }}</td>
+                              <td><button class="btn btn-info" >View</button></td>
+                              <td><button class="btn btn-danger">Delete</button></td>
+                            </tr>
+      
+                          </tbody>
+                        </table>
+                  </div>
+               </div>
+          </div>
+        
+        <!-- <div style="margin-left: 5cm;" class="container">
             <div class="row">
                 <div class="col-9" id="merchandiser">
                     <ul>
@@ -61,6 +168,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </body>
 </html>
