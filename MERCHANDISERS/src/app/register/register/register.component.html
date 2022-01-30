@@ -1,49 +1,82 @@
-<div class="container" style="margin-top: 25rem; margin-left: 40rem;">
-  <div class="row">
-      <div class="col-md-6">
-          <div class="card">
-              <div class="text-center">
-                  <h1>Register</h1>
-                  <h6>Register Yourself here!!</h6>
+<style>
+  a {
+    text-decoration: none;
+  }
 
-              </div>
-
-              
-                  <form>
-                      <form [formGroup]="registerForm" (ngSubmit)="register()">
-                      <div class="form-group">
-                          <label for="exampleInputPassword1">Full Names</label>
-                          <input  formContolName="fullname" type="text" class="form-control" id="exampleInputPassword1" placeholder="Full name">
-                          <span class="text-danger" *ngIf="registerForm.controls['fullname'].dirty && registerForm.hasError('required','fullname')">*Fullname is required*</span>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Mobile Number</label>
-                          <input formContolName="mobile" type="number" class="form-control" id="exampleInputPassword1" placeholder="Mobile Number">
-                          <span class="text-danger" *ngIf="registerForm.controls['mobile'].dirty && registerForm.hasError('required','mobile')">*Fullname is required*</span>
-                        </div>
-
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input formContolName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email address">
-                        <span class="text-danger" *ngIf="registerForm.controls['email'].dirty && registerForm.hasError('required','email')">*Fullname is required*</span>
-                        
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input formContolName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        <span class="text-danger" *ngIf="registerForm.controls['password'].dirty && registerForm.hasError('required','password')">*Fullname is required*</span>
-                      </div>
-                      
-                      <button type="submit"   class="btn btn-primary mt-2">Register</button>
-                    </form>
-                  </form>
-                    <a style="color: #fff;margin-top: 10px;" routerLink = "/login" >Already registered?Click to Login!!</a>
-
+</style>
+<div class="container mt-5" style="font-family: 'Yeon Sung', cursive; margin-top:5%;">
+  <div class="col-md-6 mx-auto" style="margin-top:10%;">
+    <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate
+      class="text-center border border-light p-5">
+      <p class="h4 mb-4">Sign Up</p>
+      <div class="form-group mb-4">
+        <input type="text" class="form-control mb-4" name="username" [(ngModel)]="form.username" placeholder="Username"
+          required minlength="3" maxlength="20" #username="ngModel" />
+        <div class="alert-danger" *ngIf="username.errors && f.submitted">
+          <div *ngIf="username.errors.required">Username is required</div>
+          <div *ngIf="username.errors.minlength">
+            Username must be at least 3 characters
           </div>
+          <div *ngIf="username.errors.maxlength">
+            Username must be at most 20 characters
+          </div>
+        </div>
+      </div>
+      <div class="form-row mb-4">
+        <div class="col">
+          <input type="email" class="form-control" placeholder="E-mail" name="email" [(ngModel)]="form.email" required
+            email #email="ngModel" />
+          <div class="alert-danger" *ngIf="email.errors && f.submitted">
+            <div *ngIf="email.errors.required">Email is required</div>
+            <div *ngIf="email.errors.email">
+              Email must be a valid email address
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <input type="number" class="form-control" minlength="13" maxlength="13" placeholder="phone" name="phone"
+            [(ngModel)]="form.phone" required phone #phone="ngModel" />
+          <div class="alert-danger" *ngIf="phone.errors && f.submitted">
+            <div *ngIf="phone.errors.required">Phone number is required</div>
+            <div *ngIf="phone.errors.phone">
+              phone must be a valid email address
+            </div>
+            <div *ngIf="phone.errors.required">Phone number is required</div>
+            <div *ngIf="phone.errors.minlength">
+              Phone number must be at least 13 characters
+            </div>
+            <div *ngIf="phone.errors.maxlength">
+              Phone number must be at most 13 characters
+            </div> 
+          </div>
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <input type="password" placeholder="Password" class="form-control" name="password" [(ngModel)]="form.password"
+          required minlength="6" #password="ngModel" />
+        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+          Your password should be At least 8 characters and 1 digit
+        </small>
+        <div class="alert-danger" *ngIf="password.errors && f.submitted">
+          <div *ngIf="password.errors.required">Password is required</div>
+          <div *ngIf="password.errors.minlength">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-info my-4 btn-block"  (click)="showSuccess()" type="submit">Sign Up</button>
+      </div>
+      <div class="form-group">
 
       </div>
-
+      <hr>
+      <p>By clicking
+        <em>Sign up</em> you agree to our
+        <a href="" target="_blank">terms of service</a></p>
+      <p>All ready a member?
+        <a routerLink="/login">SignIn
+        </a>
+    </form>
   </div>
-
 </div>
