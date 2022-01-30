@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="margin-top: 25rem; margin-left: 40rem;" >
     <div class="row">
         <div class="col-md-6">
             <div class="card">
@@ -22,7 +22,7 @@
                           <span class="text-danger" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">*Password is required*</span>
                         </div>
                        
-                        <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary mt-2">Login</button>
+                        <a class="btn btn-primary mt-2" href="dashboard" >Login</a>
                       </form>
                <a style="color: #fff;margin-top: 10px;" routerLink = "/register" >New user?Click to Register!!</a>
 
