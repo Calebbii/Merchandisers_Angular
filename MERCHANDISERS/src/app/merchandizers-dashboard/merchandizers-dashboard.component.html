@@ -1,0 +1,160 @@
+<div class="container mt-5 d-flex flex-row">
+    <div class="left-side green" style="width: 55cm;">
+        <nav class="pt-7" style="margin-right: 5cm;">
+            <ul type="none">
+                <li class="">
+                  <div class="col-md-12 text-center">
+                    <button class="green">
+                    <a
+                    routerLink="/users/:id"
+                    routerLinkActive="active"
+                    id="2"
+                    type="button"
+                    class="btn onet">
+                    <img class="yyy" style="height: 70px; width: 100px;" src="https://cdn2.vectorstock.com/i/1000x1000/20/76/man-avatar-profile-vector-21372076.jpg">
+                    <strong style="color: rgb(236, 163, 27); font-size: 40px;" >PROFILE</strong>
+                    </a>
+                  </button>
+                  </div>
+                </li>
+                <li class="">
+                <div class="col-md-12 text-center">
+                  <button class="green">
+                  <a
+                  id="2"
+                  type="button green"
+                  class="btn onet"
+                  (click)="openPopu()">
+                  <img class="yyy" style="height: 90px; width: 130px;" src="https://f9prodcdn.azureedge.net/media/1905/iconh1_routemap-copy.png">
+                  <strong style="color: rgb(236, 163, 27); font-size: 40px;" >ROUTES</strong>
+                </a>
+                </button>
+                </div>
+                </li>
+                <div class="twe">
+                  <li class="">
+                    <div class="col-md-12 text-center">
+                      <button class="green">
+                      <a
+                      routerLink="/user/:id/dashboard"
+                      routerLinkActive="active"
+                      id="2"
+                      type="button"
+                      class="btn onet twe">
+                      <img class="yyy" style="height: 70px; width: 130px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT55d6d7YbbBerPK0Cezy0FoFcFDJtQXrhsZw&usqp=CAU">
+                      <strong style="color: rgb(236, 163, 27); font-size: 40px;" >CALENDAR</strong>
+                      </a>
+                    </button>
+                    </div>
+                  </li>
+                  <li class="">
+                      <div class="col-md-12 text-center">
+                        <button class="green">
+                        <a
+                        id="2"
+                        type="button"
+                        class="btn onet"
+                        (click)="openPop()">
+                        <img class="yyy" src="https://i.pinimg.com/736x/be/7a/43/be7a43ae4e8d64cd4fcc5a2522986134.jpg">
+                        <strong style="color: rgb(236, 163, 27); font-size: 40px;" >NOTIFICATIONS</strong>
+                        </a>
+                      </button>
+                      </div>
+                  </li>
+                </div>
+            </ul>
+        </nav>
+    </div>
+    <div class="right-side">
+        <div class="green d-flex flex-row">
+            <div class="input-group pt-2 pb-2 cen">
+                <div class="form-outline">
+                    <button style="background-color: aqua; border: 30%; margin-left: 2cm;">Create Merchandiser</button>
+                </div>
+                <div class="form-outline">
+                    <input type="search" id="form1" class="form-control" placeholder="Search"/>
+                </div>
+                  <button type="button" class="btn btn-primary">
+                    <i class="fas fa-search"></i>
+                  </button>
+            </div>
+            <div>
+                <img class="img" src="https://res.cloudinary.com/dante6996-arch/image/upload/v1638895973/odk9aruvpwstqf1tnwyx.png" alt="profile-pic" style="width: 100px; height: 100px;">
+            </div>
+        </div>
+             
+            <div class="down-side">
+              <h4 class="text-center">MERCHANDISERS</h4>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th class="text-purple" scope="col">FIRSTNAME</th>
+                        <th class="text-purple" scope="col">LASTNAME</th>
+                        <th class="text-purple" scope="col">EMAIL</th>
+                        <th class="text-purple" scope="col">CONTACT</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr  *ngFor='let merchandiser of merchandisers;let i = index'>
+                        <th scope="row"></th>
+                        <td>{{ merchandiser.firstname }}</td>
+                        <td>{{ merchandiser.lastname }}</td>
+                        <td>{{ merchandiser.email }}</td>
+                        <td>{{ merchandiser.contact }}</td>
+                        <td><button class="btn btn-info" >View</button></td>
+                        <td><button class="btn btn-danger">Delete</button></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+            </div>
+         </div>
+    </div>
+
+
+    <!-- <div
+      class="modal"
+      tabindex="-1"
+      role="dialog"
+      [ngStyle]="{'display':displatyle}">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Messages</h4>
+          </div>
+          <div class="modal-body">
+            <h6>No new Messages Yet</h6>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" 
+                    (click)="closePopu()">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div
+      class="modal"
+      tabindex="-1"
+      role="dialog"
+      [ngStyle]="{'display':dispstyle}">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Notifications</h4>
+          </div>
+          <div class="modal-body">
+            <h6>No Notifications Yet</h6>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" 
+                    (click)="closePop()">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
